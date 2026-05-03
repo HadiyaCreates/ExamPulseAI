@@ -266,9 +266,7 @@ const Dashboard = () => {
                   </div>
                 ))}
               </div>
-              {/* <button className="w-full mt-8 py-3 bg-blue-600 hover:bg-blue-500 rounded-xl text-xs font-black uppercase tracking-widest transition-all">
-                Download Mock Test
-              </button> */}
+            
             </div>
           </div>
         </div>
