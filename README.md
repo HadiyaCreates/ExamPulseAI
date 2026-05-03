@@ -8,12 +8,15 @@ AI-powered exam intelligence system that transforms past papers into high-yield 
 
 🎬 Live Demo
 
+
 👉 Watch the platform in action
 https://drive.google.com/file/d/1bOBWDOSSDoolbAxMTNSvxxmXwkDCxq1B/view?usp=sharing
+
 
 ✨ What is ExamPulseAI?
 
 ExamPulseAI is an advanced exam analytics dashboard that converts raw historical exam data (2019–2026) into:
+
 
 📈 Smart topic insights
 🎯 High-yield prioritization
@@ -21,21 +24,26 @@ ExamPulseAI is an advanced exam analytics dashboard that converts raw historical
 📊 Visual performance analytics
 ⚡ Key Features
 🔥 AI Intelligence Engine
+
 Processes multiple years of exam papers
 Detects repeated & high-frequency topics
 Assigns confidence scores (up to 98.4%)
+
 📊 Smart Analytics Dashboard
 Doughnut charts for topic weightage
 Bar charts for trend frequency
 Real-time visual insights
+
 📅-Day AI Study Planner
 Automatically generates optimized study plan
 Prioritizes high-impact topics first
 Reduces unnecessary study load
+
 🏆 High-Yield Detection System
 Ranks topics based on recurrence
 Highlights “must-study” concepts
 Eliminates guesswork
+
 🛠️ Tech Stack
 Frontend   → React.js + Tailwind CSS  
 Backend    → Node.js + Express.js  
