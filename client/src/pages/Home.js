@@ -27,7 +27,6 @@ function Home() {
     setFiles(files.filter((_, i) => i !== index));
   };
 
- 
   const handleAnalyze = async () => {
     if (files.length === 0) return;
     setLoading(true);
@@ -46,7 +45,6 @@ function Home() {
 
       const results = await Promise.all(analysisPromises);
 
-   
       const mergedResult = {
         ...results[0],
         fileName:
@@ -148,7 +146,7 @@ function Home() {
               </div>
             </div>
 
-           
+            {/* 1. Cross-Paper Correlation (Your existing block) */}
             {files.length > 1 && (
               <div className="mt-6 p-4 bg-blue-50/50 border border-blue-100 rounded-2xl flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -163,6 +161,50 @@ function Home() {
                       Merging {files.length} datasets for higher accuracy
                     </p>
                   </div>
+                </div>
+              </div>
+            )}
+
+            {files.length > 0 && (
+              <div className="mt-8 space-y-3 border-t border-slate-100 pt-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                <div className="flex items-center justify-between mb-4">
+                  <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] flex items-center gap-2">
+                    <FileSearch className="w-3 h-3 text-blue-500" />
+                    Staged for Analysis ({files.length})
+                  </h4>
+                </div>
+
+                <div className="max-h-52 overflow-y-auto pr-2 space-y-2 custom-scrollbar">
+                  {files.map((file, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center justify-between p-4 bg-slate-50/50 border border-slate-100 rounded-xl hover:border-blue-200 hover:bg-white transition-all shadow-sm group"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-10 h-10 rounded-lg bg-white shadow-sm flex items-center justify-center text-slate-400 group-hover:text-blue-600 transition-colors">
+                          {file.type.includes("pdf") ? (
+                            <FileText size={18} />
+                          ) : (
+                            <ImageIcon size={18} />
+                          )}
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="text-sm font-bold text-slate-700 truncate">
+                            {file.name}
+                          </p>
+                          <p className="text-[10px] font-black text-blue-500 uppercase tracking-tight">
+                            {(file.size / 1024 / 1024).toFixed(2)} MB — Ready
+                          </p>
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => removeFile(index)}
+                        className="p-2 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all flex-shrink-0"
+                      >
+                        <X size={16} />
+                      </button>
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
@@ -198,7 +240,6 @@ function Home() {
               )}
             </button>
           </div>
-
         </div>
       </main>
     </div>
