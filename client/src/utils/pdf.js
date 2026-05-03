@@ -1,7 +1,6 @@
 import * as pdfjsLib from "pdfjs-dist";
 import worker from "pdfjs-dist/build/pdf.worker.entry";
 
-// ✅ THIS LINE FIXES YOUR ERROR
 pdfjsLib.GlobalWorkerOptions.workerSrc = worker;
 
 export const extractTextFromPDF = async (file) => {
