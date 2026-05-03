@@ -27,35 +27,7 @@ function Home() {
     setFiles(files.filter((_, i) => i !== index));
   };
 
-  // const handleAnalyze = async () => {
-  //   if (files.length === 0) return;
-  //   setLoading(true);
-
-  //   try {
-  //     // Process the first file
-  //     const text = await extractTextFromPDF(files[0]);
-
-  //     const res = await fetch("http://localhost:5000/api/analyze", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({ text }),
-  //     });
-
-  //     const result = await res.json();
-
-  //     // Save results + the original filename for dynamic dashboard titling
-  //     localStorage.setItem("analysis", JSON.stringify({
-  //       ...result,
-  //       fileName: files[0].name
-  //     }));
-
-  //     navigate("/dashboard");
-  //   } catch (error) {
-  //     console.error("Analysis failed:", error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+ 
   const handleAnalyze = async () => {
     if (files.length === 0) return;
     setLoading(true);
